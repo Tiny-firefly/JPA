@@ -27,6 +27,7 @@ public class reflectClassTest {
 
         System.out.println(cls1==cls2);
         System.out.println(cls1==cls3);
+
     }
 
     /**
