@@ -5,7 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class Demo01 {
+public class DemoTest {
     @Test
     public  void first(){
         System.out.println("正在测试！！！");
