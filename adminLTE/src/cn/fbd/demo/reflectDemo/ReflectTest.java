@@ -2,7 +2,6 @@ package cn.fbd.demo.reflectDemo;
 
 import org.junit.Test;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.util.Properties;
@@ -10,6 +9,7 @@ import java.util.Properties;
 /**
  * 反射框架 小示例
  */
+@SuppressWarnings("all")
 public class ReflectTest {
 
     @Test
@@ -21,7 +21,7 @@ public class ReflectTest {
         //1.2 加载配置文件，转换为一个集合
         // 1.2.1 获取class目录下的配置文件
         ClassLoader classLoader = ReflectTest.class.getClassLoader();
-        InputStream is = classLoader.getResourceAsStream("reflect.properties");
+        InputStream is = classLoader.getResourceAsStream("config/reflect.properties");
         pro.load(is);
         // 2. 获取配置文件中定义的数据
         String className = pro.getProperty("className");
@@ -38,7 +38,7 @@ public class ReflectTest {
         method.invoke(obj);
         //  执行有参 方法
         Method method2 = cls.getMethod(methodName,String.class);
-        method2.invoke(obj,"红晓实施");
+        method2.invoke(obj,"蔬菜沙拉");
     }
 
 }
