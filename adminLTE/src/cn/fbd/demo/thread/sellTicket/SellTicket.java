@@ -6,7 +6,7 @@ package cn.fbd.demo.thread.sellTicket;
 public class SellTicket implements Runnable{
 
 // 定义一个多个线程共享的票源
-    private int ticket = 10000;
+    private int ticket = 1000;
 
     // 创建一个锁对象
     Object obj = new Object();
@@ -32,14 +32,19 @@ public class SellTicket implements Runnable{
             //判断是否有票
             while(ticket>0){
                 // 注意 这个同步快要放到循环的判断的下边
+
                 synchronized(obj){
-                try {
-                    Thread.sleep(10);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.println(Thread.currentThread().getName()+"正在买第："+ticket+"张票！");
-                ticket--;
+                    if(ticket>0){
+                        try {
+                            Thread.sleep(1);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        System.out.println(Thread.currentThread().getName()+"正在买第："+ticket+"张票！");
+                        ticket--;
+                    }
+
+
             }
         }
 
