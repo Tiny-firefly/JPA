@@ -32,8 +32,8 @@ public class JpaZSGCTest {
         transaction.begin();
         //3.完成增删改查操作：保存一个客户到数据库中
         Customer customer = new Customer();
-        customer.setCustName("老婆");
-        customer.setCustIndustry("吃货");
+        customer.setCustName("老鹰");
+        customer.setCustIndustry("吃小鸡");
         //4. 保存
         entityManager.persist(customer);
         //5. 提交事务
